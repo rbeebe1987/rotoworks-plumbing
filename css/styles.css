@@ -168,6 +168,11 @@ strong, b {
   width: 100%;
   z-index: 1000;
   background: var(--navy);
+  box-shadow: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.site-header.scrolled {
   box-shadow: var(--shadow-md);
 }
 
@@ -921,6 +926,34 @@ strong, b {
   margin-top: 0.75rem;
 }
 
+.field-error {
+  color: var(--red);
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+.form-group input.invalid,
+.form-group textarea.invalid,
+.form-group select.invalid {
+  border-color: var(--red);
+}
+
+.form-success {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.15rem;
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.form-error-msg {
+  text-align: center;
+  padding: 1rem;
+  color: var(--red);
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
 /* ----------------------------------------------------------
    18. CTA Banner
    ---------------------------------------------------------- */
@@ -1137,6 +1170,10 @@ strong, b {
   box-shadow: 0 4px 20px rgba(200, 16, 46, 0.5);
   animation: pulse-cta 2s infinite;
   text-decoration: none;
+}
+
+.floating-cta.pulse-stopped {
+  animation: none;
 }
 
 .floating-cta svg {
