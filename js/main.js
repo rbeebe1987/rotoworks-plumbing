@@ -6,6 +6,19 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   /* ----------------------------------------------------------
+     0. Photo Carousel (homepage)
+     ---------------------------------------------------------- */
+  var carouselImages = document.querySelectorAll('.carousel-img');
+  if (carouselImages.length > 1) {
+    var currentSlide = 0;
+    setInterval(function () {
+      carouselImages[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % carouselImages.length;
+      carouselImages[currentSlide].classList.add('active');
+    }, 4000);
+  }
+
+  /* ----------------------------------------------------------
      1. Mobile Nav Toggle
      ---------------------------------------------------------- */
   const hamburger = document.querySelector('.hamburger');
@@ -59,7 +72,32 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* ----------------------------------------------------------
-     2. Mobile Dropdown Accordions
+     2a. FAQ Accordions (service pages)
+     ---------------------------------------------------------- */
+  var faqQuestions = document.querySelectorAll('.faq-question');
+
+  faqQuestions.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var isOpen = this.classList.contains('open');
+      var answer = this.nextElementSibling;
+
+      // Close all other FAQ items
+      faqQuestions.forEach(function (other) {
+        other.classList.remove('open');
+        var otherAnswer = other.nextElementSibling;
+        if (otherAnswer) otherAnswer.style.maxHeight = null;
+      });
+
+      // Toggle this one
+      if (!isOpen) {
+        this.classList.add('open');
+        if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+  /* ----------------------------------------------------------
+     2b. Mobile Dropdown Accordions
      ---------------------------------------------------------- */
   var mobileToggles = document.querySelectorAll('.mobile-dropdown-toggle');
 
@@ -165,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Check phone pattern if present
         if (field.type === 'tel' && field.pattern) {
           var regex = new RegExp('^' + field.pattern + '$');
-          // Also allow common formats: (951) 555-0199, 951-555-0199, etc.
+          // Also allow common formats: (951) 000-0000, 951-000-0000, etc.
           var digits = value.replace(/\D/g, '');
           if (!regex.test(value) && !regex.test(digits)) {
             valid = false;
@@ -209,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Show error message below the form
         var errMsg = document.createElement('p');
         errMsg.className = 'form-error-msg';
-        errMsg.textContent = 'Something went wrong. Please call us directly at (951) 555-0199.';
+        errMsg.textContent = 'Something went wrong. Please call us directly at (951) 000-0000.';
         form.appendChild(errMsg);
       });
     });
