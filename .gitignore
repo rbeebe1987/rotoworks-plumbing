@@ -1,3 +1,6 @@
+# Claude Code worktrees / local agent state
+.claude/
+
 # Scratch files from local generation scripts
 scripts/ref_frames/
 images/_reveal_raw.mp4
