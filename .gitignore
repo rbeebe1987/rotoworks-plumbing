@@ -1,0 +1,11 @@
+# Scratch files from local generation scripts
+scripts/ref_frames/
+images/_reveal_raw.mp4
+images/_*.mp4
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Playwright screenshots from local dev
+.playwright-mcp/

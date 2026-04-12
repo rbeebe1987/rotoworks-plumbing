@@ -191,10 +191,49 @@
   <main id="main">
 
     <!-- Page Hero -->
-    <section class="page-hero">
-      <h1>Plumber in Temecula, CA &mdash; RotoWorks Plumbing</h1>
-      <p>Your local plumber serving Temecula 24/7. We'll beat any written estimate.</p>
-      <a href="tel:9510000000" class="btn btn-red btn-lg" aria-label="Call RotoWorks Plumbing">CALL NOW (951) 000-0000</a>
+    <section class="hero-split hero-split--map">
+      <div class="carousel-track">
+        <img src="../images/area-temecula.png" alt="Map of Temecula, CA service area" class="carousel-img active">
+      </div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-split-inner">
+        <div class="hero-split-content">
+          <h1>Plumber in Temecula, CA</h1>
+          <p>Your local 24/7 plumber. Licensed, insured, and we'll beat any written estimate.</p>
+          <div class="hero-buttons">
+            <a href="tel:9510000000" class="btn btn-red btn-lg">
+              <i class="fas fa-phone" style="margin-right:0.5rem;"></i> CALL (951) 000-0000
+            </a>
+          </div>
+          <ul class="hero-trust-list">
+            <li><i class="fas fa-check"></i> 24/7 Emergency Response</li>
+            <li><i class="fas fa-check"></i> Price Beat Guarantee</li>
+            <li><i class="fas fa-check"></i> Licensed &amp; Insured</li>
+          </ul>
+        </div>
+
+        <aside class="hero-split-form">
+          <div class="hero-form-card">
+            <h2>Get a Free Estimate</h2>
+            <p class="hero-form-subtitle">We respond in 30 minutes or less.</p>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+              <input type="text" name="_gotcha" style="display:none">
+              <div class="form-group">
+                <input type="text" name="name" required placeholder="Your Name">
+              </div>
+              <div class="form-group">
+                <input type="tel" name="phone" required placeholder="Phone Number" pattern="[0-9]{10}">
+              </div>
+              <div class="form-group">
+                <textarea name="issue" required placeholder="Briefly describe your plumbing issue" rows="3"></textarea>
+              </div>
+              <button type="submit" class="form-submit">GET FREE ESTIMATE</button>
+              <p class="form-note">Or call <a href="tel:9510000000">(951) 000-0000</a> for fastest service.</p>
+            </form>
+          </div>
+        </aside>
+      </div>
     </section>
 
     <!-- Trust Bar -->
